@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import cn.onekit.css.BeforeAfter;
 import cn.onekit.css.CSSStyleDeclaration;
 
 public class CssLayoutParams extends FrameLayout.LayoutParams {

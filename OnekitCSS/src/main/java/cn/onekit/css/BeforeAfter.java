@@ -1,10 +1,13 @@
-package cn.onekit.css.core;
+package cn.onekit.css;
 
 import android.content.Context;
-import android.widget.TextView;
-import cn.onekit.core.BeforeAfter_;
 
-public   class BeforeAfter extends TextView implements BeforeAfter_ {
+import androidx.appcompat.widget.AppCompatTextView;
+
+import cn.onekit.core.BeforeAfter_;
+import cn.onekit.css.core.CssLayoutParams;
+
+public   class BeforeAfter extends AppCompatTextView implements BeforeAfter_ {
     public BeforeAfter(Context context) {
         super(context);
     }

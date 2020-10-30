@@ -47,7 +47,7 @@ public class CSS2JSON {
         return null;
     }
 
-    void _set(List json, String key, Object value) {
+    void _set(List json, final String key, final Object value) {
         json.add(new HashMap<String, Object>() {
             {
                 put("key", key);
@@ -68,7 +68,7 @@ public class CSS2JSON {
     }
 
     public Map<String, Object> parse(String css) {
-        Map<String, Object> keyframes = new HashMap<>();
+        final Map<String, Object> keyframes = new HashMap<>();
 
         int open, close;
         while ((open = css.indexOf("/*")) != -1 &&
@@ -77,7 +77,7 @@ public class CSS2JSON {
         }
 
         // Initialize the return value _json_.
-        List<Map> json = new ArrayList<>();
+        final List<Map> json = new ArrayList<>();
         // @import
         while ((open = css.indexOf("@import")) != -1 &&
                 (close = css.indexOf(";", open)) != -1) {
@@ -85,7 +85,7 @@ public class CSS2JSON {
             String[] array = import_css.split(" ");
             String path = array[1].trim();
             path = path.substring(1, path.length() - 1);
-            String finalPath = path;
+            final String finalPath = path;
             json.add(new HashMap<String, String>() {
                 {
                     put("key", "import");
@@ -190,10 +190,10 @@ public class CSS2JSON {
                 }
                 // Save the declarations to the right selector
                 for (Map.Entry<String, String> entry : declarations_2.entrySet()) {
-                    String key = entry.getKey();
+                    final String key = entry.getKey();
                     String value = entry.getValue();
                     String important = "!important";
-                    String priority;
+                    final String priority;
                     int p = value.indexOf(important);
                     if (p >= 0) {
                         value = value.substring(0, p).trim();
@@ -201,7 +201,7 @@ public class CSS2JSON {
                     } else {
                         priority = "";
                     }
-                    String finalValue = value;
+                    final String finalValue = value;
                     _get(json, selector).add(new HashMap() {
                         {
                             put("key", key);

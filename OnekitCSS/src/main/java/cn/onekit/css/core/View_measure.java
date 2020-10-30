@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import cn.onekit.core.DOM;
+import cn.onekit.css.BeforeAfter;
 
 import static cn.onekit.thekit.Android.dp2px;
 import static cn.onekit.thekit.Android.px2dp;
@@ -24,7 +25,7 @@ public class View_measure {
             return;
         }
 
-        if (SELF instanceof BeforeAfter ){
+        if (SELF instanceof BeforeAfter){
             if(OnekitCSS.View_H5.getDisplay(SELF).equalsIgnoreCase("inline")) {
                 BeforeAfter beforeAfter = (BeforeAfter) SELF;
                 OnekitCSS.View_measure.literal(SELF, beforeAfter);
